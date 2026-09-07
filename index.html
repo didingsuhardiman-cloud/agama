@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Interaktif Belajar Sifat 20 Allah</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Amiri Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        arabic: ['Amiri', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            line-height: 2.2;
+            direction: rtl;
+        }
+        /* Custom scrollbars */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(16, 185, 129, 0.4);
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(16, 185, 129, 0.7);
+        }
+        .pulse-wave {
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+            animation: pulse-ring 1.5s infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+            70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-full flex flex-col font-sans transition-colors duration-200">
+
+    <!-- Top Navigation Header -->
+    <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-30 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white shadow-md shadow-emerald-500/20">
+                    <i class="fa-solid fa-star-and-crescent text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight text-slate-900 dark:text-white">Sifat 20 Allah</h1>
+                    <p class="text-xs text-emerald-600 dark:text-emerald-400 font-medium">Panduan Belajar & Suara Interaktif</p>
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="flex items-center space-x-2">
+                <!-- Navigation Tabs -->
+                <nav class="hidden md:flex items-center space-x-1 bg-slate-100 dark:bg-slate-700/50 p-1 rounded-xl">
+                    <button onclick="switchMainTab('learn')" id="nav-learn" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 shadow-sm transition">
+                        <i class="fa-solid fa-book-open mr-1"></i> Kartu Belajar
+                    </button>
+                    <button onclick="switchMainTab('category')" id="nav-category" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
+                        <i class="fa-solid fa-layer-group mr-1"></i> Pembagian Sifat
+                    </button>
+                    <button onclick="switchMainTab('quiz')" id="nav-quiz" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
+                        <i class="fa-solid fa-circle-question mr-1"></i> Kuis Interaktif
+                    </button>
+                    <button onclick="switchMainTab('table')" id="nav-table" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
+                        <i class="fa-solid fa-table-list mr-1"></i> Tabel Ringkasan
+                    </button>
+                </nav>
+
+                <!-- Theme Toggle -->
+                <button id="themeToggle" onclick="toggleTheme()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition" title="Ganti Tema">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu Bar -->
+        <div class="md:hidden flex border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-2 py-1 justify-around text-xs">
+            <button onclick="switchMainTab('learn')" id="mobile-nav-learn" class="flex-1 py-1.5 text-center font-semibold text-emerald-600 dark:text-emerald-400 border-b-2 border-emerald-500">
+                <i class="fa-solid fa-book-open block mb-0.5"></i> Belajar
+            </button>
+            <button onclick="switchMainTab('category')" id="mobile-nav-category" class="flex-1 py-1.5 text-center text-slate-500 dark:text-slate-400">
+                <i class="fa-solid fa-layer-group block mb-0.5"></i> Kategori
+            </button>
+            <button onclick="switchMainTab('quiz')" id="mobile-nav-quiz" class="flex-1 py-1.5 text-center text-slate-500 dark:text-slate-400">
+                <i class="fa-solid fa-circle-question block mb-0.5"></i> Kuis
+            </button>
+            <button onclick="switchMainTab('table')" id="mobile-nav-table" class="flex-1 py-1.5 text-center text-slate-500 dark:text-slate-400">
+                <i class="fa-solid fa-table-list block mb-0.5"></i> Tabel
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Category & Search Bar -->
+        <section id="category-selector-bar" class="mb-6 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Pilih Kelompok Sifat Wajib:</label>
+                <!-- Search Input -->
+                <div class="relative w-full sm:w-72">
+                    <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="Cari sifat (misal: Wujud, Kuasa)..." class="w-full pl-9 pr-4 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:outline-none focus:border-emerald-500">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+                </div>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                <button onclick="filterCategory('all')" id="btn-cat-all" class="cat-filter-btn active p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 font-bold text-xs text-center transition">
+                    Semua (20)
+                </button>
+                <button onclick="filterCategory('nafsiyah')" id="btn-cat-nafsiyah" class="cat-filter-btn p-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-semibold text-xs text-center transition hover:border-emerald-500">
+                    Nafsiyah (1)
+                </button>
+                <button onclick="filterCategory('salbiyah')" id="btn-cat-salbiyah" class="cat-filter-btn p-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-semibold text-xs text-center transition hover:border-emerald-500">
+                    Salbiyah (5)
+                </button>
+                <button onclick="filterCategory('maani')" id="btn-cat-maani" class="cat-filter-btn p-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-semibold text-xs text-center transition hover:border-emerald-500">
+                    Ma'ani (7)
+                </button>
+                <button onclick="filterCategory('maanawiyah')" id="btn-cat-maanawiyah" class="cat-filter-btn p-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-semibold text-xs text-center transition hover:border-emerald-500 col-span-2 sm:col-span-1">
+                    Ma'nawiyah (7)
+                </button>
+            </div>
+        </section>
+
+        <!-- TAB 1: INTERACTIVE LEARN CARDS -->
+        <div id="tab-learn" class="space-y-6">
+            <!-- Active Sifat Banner -->
+            <div class="bg-gradient-to-r from-emerald-600 to-teal-700 rounded-3xl p-5 text-white shadow-lg flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-solid fa-kaaba"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <h2 id="active-sifat-title" class="text-2xl font-bold">1. Wujud (وجود)</h2>
+                            <span id="active-sifat-category-badge" class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-400/30 text-emerald-100 border border-emerald-300/30">Nafsiyah</span>
+                        </div>
+                        <p id="active-sifat-desc" class="text-sm text-emerald-100 mt-0.5">Sifat Wajib pertama Allah, artinya **Ada**. Allah ada dengan sendirinya tanpa ada yang menciptakan.</p>
+                    </div>
+                </div>
+                <!-- Step progress indicator -->
+                <div class="w-full md:w-auto bg-white/10 backdrop-blur rounded-2xl p-3 px-5 text-center min-w-[200px]">
+                    <span class="text-xs uppercase tracking-wider text-emerald-200 font-medium block">Kemajuan Hafalan</span>
+                    <div class="text-xl font-extrabold mt-0.5" id="sifat-counter-text">Sifat 1 dari 20</div>
+                    <div class="w-full bg-white/20 h-2 rounded-full mt-2 overflow-hidden">
+                        <div id="sifat-progress-bar" class="bg-emerald-300 h-full w-[5%] transition-all duration-300"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Display Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Left Column: Sifat List Jump Menu (4 cols) -->
+                <div class="lg:col-span-4 flex flex-col space-y-4">
+                    <div class="bg-white dark:bg-slate-800 rounded-3xl p-4 border border-slate-200 dark:border-slate-700 shadow-sm flex-grow">
+                        <div class="flex items-center justify-between mb-3 px-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Daftar Sifat 20</h4>
+                            <span class="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium">Klik untuk memilih</span>
+                        </div>
+                        <div id="sifat-buttons-list" class="space-y-1.5 max-h-[480px] overflow-y-auto pr-1">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Card Detail View (8 cols) -->
+                <div class="lg:col-span-8 flex flex-col space-y-6">
+                    <!-- Main Card -->
+                    <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between flex-grow">
+                        
+                        <!-- Header with Arabic Title & Sound Button -->
+                        <div class="border-b border-slate-100 dark:border-slate-700/60 pb-4 mb-4 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-slate-400 dark:text-slate-500 uppercase font-semibold flex items-center">
+                                    <i class="fa-solid fa-volume-high text-emerald-500 mr-1.5"></i> Lafal & Artinya
+                                </span>
+                                <h3 id="detail-arabic-title" class="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mt-1 arabic-text">وُجُودٌ</h3>
+                            </div>
+                            <button id="btn-play-audio" onclick="playAudioCurrent()" class="w-14 h-14 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center shadow-lg shadow-emerald-600/30 transition transform active:scale-95 pulse-wave">
+                                <i id="play-icon" class="fa-solid fa-volume-high text-xl"></i>
+                            </button>
+                        </div>
+
+                        <!-- Card Content Body -->
+                        <div class="space-y-4 my-auto py-2">
+                            <!-- Name & Meaning Box -->
+                            <div class="bg-slate-50 dark:bg-slate-900/60 p-5 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span id="detail-latin-name" class="text-xl font-extrabold text-slate-800 dark:text-slate-100">1. Wujud</span>
+                                    <span id="detail-category-tag" class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">Nafsiyah</span>
+                                </div>
+                                <p id="detail-meaning" class="text-base font-semibold text-emerald-600 dark:text-emerald-400">
+                                    Artinya: **Ada**
+                                </p>
+                                <p id="detail-explanation" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                                    Allah SWT itu Wajib Ada. Adanya Allah tidak didahului oleh tiada dan tidak diciptakan oleh siapapun.
+                                </p>
+                            </div>
+
+                            <!-- Opposite / Sifat Mustahil Box -->
+                            <div class="bg-amber-50/50 dark:bg-amber-950/20 p-4 rounded-2xl border border-amber-200/50 dark:border-amber-800/30 flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block mb-0.5"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Kebalikan (Sifat Mustahil):</span>
+                                    <span id="detail-mustahil-text" class="text-sm font-bold text-slate-800 dark:text-slate-200">'Adam (عدم) — Artinya: Tiada</span>
+                                </div>
+                            </div>
+
+                            <!-- Dalil Naqli (Al-Qur'an / Proof) -->
+                            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/40 border border-slate-100 dark:border-slate-800">
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-1"><i class="fa-solid fa-book-quran text-emerald-500 mr-1"></i> Dalil Naqli:</span>
+                                <p id="detail-dalil-ar" class="arabic-text text-lg font-bold text-slate-800 dark:text-slate-200 text-right mb-1">اللَّهُ خَالِقُ كُلِّ شَيْءٍ</p>
+                                <p id="detail-dalil-translation" class="text-xs text-slate-600 dark:text-slate-400 italic">"Allah pencipta segala sesuatu..." (QS. Az-Zumar: 62)</p>
+                            </div>
+                        </div>
+
+                        <!-- Audio Indicator & Nav Buttons -->
+                        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/60">
+                            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-3">
+                                <span id="audio-status-label" class="flex items-center space-x-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                    <span>Klik tombol audio untuk mendengarkan lafal</span>
+                                </span>
+                                <button onclick="toggleAutoPlay()" id="btn-autoplay" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300 font-medium transition">
+                                    <i class="fa-solid fa-play mr-1"></i> Mode Putar Otomatis
+                                </button>
+                            </div>
+
+                            <div class="flex items-center justify-between space-x-3">
+                                <button id="btn-prev-sifat" onclick="navigateSifat(-1)" class="flex-1 py-3 px-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs sm:text-sm shadow-sm flex items-center justify-center space-x-2 transition disabled:opacity-40 disabled:cursor-not-allowed">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                    <span>Sebelumnya</span>
+                                </button>
+                                <button id="btn-next-sifat" onclick="navigateSifat(1)" class="flex-1 py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-emerald-600/20 flex items-center justify-center space-x-2 transition">
+                                    <span>Selanjutnya</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: CATEGORY MATRIX BREAKDOWN -->
+        <div id="tab-category" class="hidden space-y-6">
+            <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2">4 Pembagian Sifat 20 Allah</h2>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Para ulama Aqidah mengelompokkan 20 Sifat Wajib Allah menjadi 4 golongan utama:</p>
+
+                <!-- 4 Categories Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- 1. Nafsiyah -->
+                    <div class="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-3">
+                            <h3 class="font-bold text-base text-emerald-600 dark:text-emerald-400">1. Sifat Nafsiyah (1 Sifat)</h3>
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">Wujud</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Sifat yang berhubungan dengan Zat Allah. Menegaskan bahwa Allah itu ada tanpa membutuhkan pendorong atau pencipta lain.
+                        </p>
+                        <div class="pt-2 border-t border-slate-200/60 dark:border-slate-700/60">
+                            <span class="text-xs font-bold text-slate-700 dark:text-slate-200 block mb-1">Anggota Sifat:</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-600 text-white text-xs font-semibold inline-block">1. Wujud (Ada)</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. Salbiyah -->
+                    <div class="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-3">
+                            <h3 class="font-bold text-base text-emerald-600 dark:text-emerald-400">2. Sifat Salbiyah (5 Sifat)</h3>
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">Penolak Sifat Kekurangan</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Sifat yang menolak atau meniadakan segala sifat kekurangan yang tidak layak bagi keagungan Allah SWT.
+                        </p>
+                        <div class="pt-2 border-t border-slate-200/60 dark:border-slate-700/60">
+                            <span class="text-xs font-bold text-slate-700 dark:text-slate-200 block mb-1">Anggota Sifat:</span>
+                            <div class="flex flex-wrap gap-1.5 text-xs">
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Qidam</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Baqa'</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Mukhalafatu lil-Hawaditsi</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Qiyamuhu Binafsihi</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Wahdaniyah</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Ma'ani -->
+                    <div class="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-3">
+                            <h3 class="font-bold text-base text-emerald-600 dark:text-emerald-400">3. Sifat Ma'ani (7 Sifat)</h3>
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">Sifat Keutamaan Abadi</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Sifat-sifat abstrak yang berdiri pada Zat Allah yang wajib ada secara hukum akal.
+                        </p>
+                        <div class="pt-2 border-t border-slate-200/60 dark:border-slate-700/60">
+                            <span class="text-xs font-bold text-slate-700 dark:text-slate-200 block mb-1">Anggota Sifat:</span>
+                            <div class="flex flex-wrap gap-1.5 text-xs">
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Qudrat</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Iradat</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">'Ilmun</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Hayat</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Sama'</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Bashar</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Kalam</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Ma'nawiyah -->
+                    <div class="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-3">
+                            <h3 class="font-bold text-base text-emerald-600 dark:text-emerald-400">4. Sifat Ma'nawiyah (7 Sifat)</h3>
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">Keadaan Selalu Ada</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Sifat kelanjutan yang tidak dapat dipisahkan dari Sifat Ma'ani (Keadaan Allah yang selalu aktif memiliki sifat Ma'ani tersebut).
+                        </p>
+                        <div class="pt-2 border-t border-slate-200/60 dark:border-slate-700/60">
+                            <span class="text-xs font-bold text-slate-700 dark:text-slate-200 block mb-1">Anggota Sifat:</span>
+                            <div class="flex flex-wrap gap-1.5 text-xs">
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Qadiran</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Muridan</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">'Aliman</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Hayyan</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Sami'an</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Bashiran</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-medium">Mutakalliman</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sifat Ja'iz Allah Box -->
+                <div class="mt-6 p-5 bg-emerald-50 dark:bg-emerald-950/40 rounded-2xl border border-emerald-200 dark:border-emerald-800 text-xs">
+                    <h4 class="font-bold text-emerald-800 dark:text-emerald-200 text-sm mb-1"><i class="fa-solid fa-star text-amber-500 mr-1.5"></i> Sifat Ja'iz Bagi Allah (1 Sifat)</h4>
+                    <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+                        Selain Sifat Wajib dan Sifat Mustahil, Allah juga memiliki 1 **Sifat Ja'iz**, yaitu: <br>
+                        <span class="font-bold text-emerald-700 dark:text-emerald-300">"Fi'lu kulli mumkinnin aw tarkuhu"</span> (فِعْلُ كُلِّ مُمْكِنٍ أَوْ تَرْكُهُ) — Bebas bagi Allah untuk berbuat sesuatu hal yang mungkin atau tidak berbuat hal tersebut.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: QUIZ MODE -->
+        <div id="tab-quiz" class="hidden space-y-6">
+            <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm max-w-3xl mx-auto">
+                <div class="text-center mb-6">
+                    <div class="w-12 h-12 bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 rounded-2xl flex items-center justify-center mx-auto mb-3 text-xl">
+                        <i class="fa-solid fa-puzzle-piece"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white">Kuis & Latihan Sifat 20</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Uji hafalan dan pemahaman Anda tentang arti serta kategori Sifat 20 Allah.</p>
+                </div>
+
+                <div id="quiz-container" class="space-y-4">
+                    <div id="quiz-card" class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 text-center">
+                        <span class="text-xs uppercase font-bold text-emerald-600 dark:text-emerald-400 tracking-wider block mb-2" id="quiz-question-num">Pertanyaan 1 dari 5</span>
+                        <h3 id="quiz-question-title" class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-4">Apa arti dari Sifat Wajib "Qidam"?</h3>
+                        
+                        <div id="quiz-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                            <!-- Options rendered by JS -->
+                        </div>
+                    </div>
+
+                    <div id="quiz-score-board" class="hidden bg-emerald-50 dark:bg-emerald-950/40 p-6 rounded-2xl border border-emerald-200 dark:border-emerald-800 text-center">
+                        <i class="fa-solid fa-trophy text-4xl text-amber-500 mb-3 block"></i>
+                        <h3 class="text-2xl font-bold text-emerald-800 dark:text-emerald-200">Selesai! Skor Anda: <span id="quiz-score">100</span></h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 mb-4">Masya Allah! Anda telah memahami Sifat-sifat Wajib Allah dengan sangat baik.</p>
+                        <button onclick="resetQuiz()" class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm">Coba Kuis Lagi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: SUMMARY TABLE -->
+        <div id="tab-table" class="hidden space-y-6">
+            <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm overflow-x-auto">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Tabel Lengkap Sifat 20 Allah</h2>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Ringkasan Sifat Wajib, Sifat Mustahil (kebalikannya), Arti, dan Golongannya.</p>
+
+                <table class="w-full text-left text-xs text-slate-700 dark:text-slate-200 border-collapse">
+                    <thead>
+                        <tr class="bg-emerald-600 text-white font-bold">
+                            <th class="p-3 rounded-tl-xl">No</th>
+                            <th class="p-3">Sifat Wajib</th>
+                            <th class="p-3">Arti Sifat Wajib</th>
+                            <th class="p-3">Sifat Mustahil</th>
+                            <th class="p-3">Arti Sifat Mustahil</th>
+                            <th class="p-3 rounded-tr-xl">Kelompok</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body-rows" class="divide-y divide-slate-200 dark:divide-slate-700">
+                        <!-- Populated dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Data Structure for 20 Attributes of Allah
+        const sifatData = [
+            {
+                id: 1,
+                name: "Wujud",
+                ar: "وُجُودٌ",
+                meaning: "Ada",
+                category: "nafsiyah",
+                categoryLabel: "Nafsiyah",
+                explanation: "Allah SWT itu Wajib Ada. Adanya Allah tidak didahului oleh tiada dan tidak diciptakan oleh siapapun.",
+                mustahilAr: "عَدَمٌ",
+                mustahilLatin: "'Adam",
+                mustahilMeaning: "Tiada",
+                dalilAr: "اللَّهُ خَالِقُ كُلِّ شَيْءٍ",
+                dalilTranslation: "\"Allah pencipta segala sesuatu...\" (QS. Az-Zumar: 62)"
+            },
+            {
+                id: 2,
+                name: "Qidam",
+                ar: "قِدَمٌ",
+                meaning: "Terdahulu / Awal",
+                category: "salbiyah",
+                categoryLabel: "Salbiyah",
+                explanation: "Allah itu Maha Awal, tidak ada permulaan bagi keberadaan-Nya. Allah sudah ada sebelum makhluk diciptakan.",
+                mustahilAr: "حُدُوثٌ",
+                mustahilLatin: "Huduts",
+                mustahilMeaning: "Baru / Ada permulaan",
+                dalilAr: "هُوَ الْأَوَّلُ وَالْآخِرُ",
+                dalilTranslation: "\"Dialah Yang Awal dan Yang Akhir...\" (QS. Al-Hadid: 3)"
+            },
+            {
+                id: 3,
+                name: "Baqa'",
+                ar: "بَقَاءٌ",
+                meaning: "Kekal / Abadi",
+                category: "salbiyah",
+                categoryLabel: "Salbiyah",
+                explanation: "Allah itu Maha Kekal. Seluruh makhluk akan binasa dan hancur, namun Allah tetap ada selamanya.",
+                mustahilAr: "فَنَاءٌ",
+                mustahilLatin: "Fana'",
+                mustahilMeaning: "Binasa / Rusak",
+                dalilAr: "وَيَبْقَىٰ وَجْهُ رَبِّكَ ذُو الْجَلَالِ وَالْإِكْرَامِ",
+                dalilTranslation: "\"Dan tetap kekal Wajah Tuhanku yang mempunyai keagungan dan kemuliaan.\" (QS. Ar-Rahman: 27)"
+            },
+            {
+                id: 4,
+                name: "Mukhalafatu lil-Hawaditsi",
+                ar: "مُخَالَفَةٌ لِلْحَوَادِثِ",
+                meaning: "Berbeda dengan Makhluk",
+                category: "salbiyah",
+                categoryLabel: "Salbiyah",
+                explanation: "Zat, Sifat, dan Perbuatan Allah sama sekali tidak serupa dengan zat, sifat, maupun perbuatan makhluk ciptaan-Nya.",
+                mustahilAr: "مُمَاثَلَةٌ لِلْحَوَادِثِ",
+                mustahilLatin: "Mumatsalatu lil-Hawaditsi",
+                mustahilMeaning: "Serupa dengan makhluk",
+                dalilAr: "لَيْسَ كَمِثْلِهِ شَيْءٌ",
+                dalilTranslation: "\"Tidak ada sesuatupun yang serupa dengan Dia...\" (QS. Asy-Syura: 11)"
+            },
+            {
+                id: 5,
+                name: "Qiyamuhu Binafsihi",
+                ar: "قِيَامُهُ بِنَفْسِهِ",
+                meaning: "Berdiri Sendiri",
+                category: "salbiyah",
+                categoryLabel: "Salbiyah",
+                explanation: "Allah berdiri sendiri tanpa membutuhkan bantuan, tempat, atau pertolongan dari siapapun.",
+                mustahilAr: "إِحْتِيَاجٌ إِلَى غَيْرِهِ",
+                mustahilLatin: "Ihtiyaju ila Ghairihi",
+                mustahilMeaning: "Membutuhkan bantuan lain",
+                dalilAr: "فَإِنَّ اللَّهَ لَغَنِيٌّ عَنِ الْعَالَمِينَ",
+                dalilTranslation: "\"Sesungguhnya Allah Maha Kaya (tidak memerlukan sesuatu) dari semesta alam.\" (QS. Ali 'Imran: 97)"
+            },
+            {
+                id: 6,
+                name: "Wahdaniyah",
+                ar: "وَحْدَانِيَّةٌ",
+                meaning: "Esa / Tunggal",
+                category: "salbiyah",
+                categoryLabel: "Salbiyah",
+                explanation: "Allah itu Maha Tunggal (Esa) pada Zat-Nya, Sifat-Nya, maupun Perbuatan-Nya. Tidak ada sekutu bagi Allah.",
+                mustahilAr: "تَعَدُّدٌ",
+                mustahilLatin: "Ta'addud",
+                mustahilMeaning: "Berbilang / Banyak",
+                dalilAr: "قُلْ هُوَ اللَّهُ أَحَدٌ",
+                dalilTranslation: "\"Katakanlah (Muhammad), Dialah Allah, Yang Maha Esa.\" (QS. Al-Ikhlas: 1)"
+            },
+            {
+                id: 7,
+                name: "Qudrat",
+                ar: "قُدْرَةٌ",
+                meaning: "Maha Kuasa",
+                category: "maani",
+                categoryLabel: "Ma'ani",
+                explanation: "Allah memiliki kuasa mutlak atas segala sesuatu. Kuasa Allah tidak terbatas oleh apapun.",
+                mustahilAr: "عَجْزٌ",
+                mustahilLatin: "'Ajzu",
+                mustahilMeaning: "Lemah / Tidak Mampu",
+                dalilAr: "إِنَّ اللَّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+                dalilTranslation: "\"Sesungguhnya Allah Maha Kuasa atas segala sesuatu.\" (QS. Al-Baqarah: 20)"
+            },
+            {
+                id: 8,
+                name: "Iradat",
+                ar: "إِرَادَةٌ",
+                meaning: "Maha Berkehendak",
+                category: "maani",
+                categoryLabel: "Ma'ani",
+                explanation: "Apa saja yang dikehendaki Allah pasti terjadi, dan apa yang tidak dikehendaki-Nya tidak akan pernah terjadi.",
+                mustahilAr: "كَرَاهَةٌ",
+                mustahilLatin: "Karahah",
+                mustahilMeaning: "Terpaksa",
+                dalilAr: "إِنَّمَا أَمْرُهُ إِذَا أَرَادَ شَيْئًا أَنْ يَقُولَ لَهُ كُنْ فَيَكُونُ",
+                dalilTranslation: "\"Sesungguhnya urusan-Nya apabila Dia menghendaki sesuatu hanyalah berkata: Jadilah! Maka jadilah ia.\" (QS. Yasin: 82)"
+            },
+            {
+                id: 9,
+                name: "'Ilmun",
+                ar: "عِلْمٌ",
+                meaning: "Maha Mengetahui",
+                category: "maani",
+                categoryLabel: "Ma'ani",
+                explanation: "Pengetahuan Allah meliputi segala sesuatu, baik yang nampak, tersembunyi, masa lalu, maupun masa depan.",
+                mustahilAr: "جَهْلٌ",
+                mustahilLatin: "Jahlun",
+                mustahilMeaning: "Bodoh / Tidak Tahu",
+                dalilAr: "وَهُوَ بِكُلِّ شَيْءٍ عَلِيمٌ",
+                dalilTranslation: "\"Dan Dia Maha Mengetahui segala sesuatu.\" (QS. Al-Baqarah: 29)"
+            },
+            {
+                id: 10,
+                name: "Hayat",
+                ar: "حَيَاةٌ",
+                meaning: "Maha Hidup",
+                category: "maani",
+                categoryLabel: "Ma'ani",
+                explanation: "Allah itu Maha Hidup abadi, tidak mengantuk, tidak tidur, dan tidak pernah mati.",
+                mustahilAr: "مَوْتٌ",
+                mustahilLatin: "Mawt",
+                mustahilMeaning: "Mati",
+                dalilAr: "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ",
+                dalilTranslation: "\"Allah, tidak ada tuhan selain Dia. Yang Maha Hidup, Yang terus-menerus mengurus (makhluk-Nya)...\" (QS. Al-Baqarah: 255)"
+            },
+            {
+                id: 11,
+                name: "Sama'",
+                ar: "سَمَعٌ",
+                meaning: "Maha Mendengar",
+                category: "maani",
+                categoryLabel: "Ma'ani",
+                explanation: "Allah mendengar segala jenis suara di alam semesta, baik bisikan hati maupun suara yang paling keras sekalipun.",
+                mustahilAr: "صَمَمٌ",
+                mustahilLatin: "Shamam",
+                mustahilMeaning: "Tuli",
+                dalilAr: "وَهُوَ السَّمِيعُ الْعَلِيمُ",
+                dalilTranslation: "\"Dan Dialah Yang Maha Mendengar lagi Maha Mengetahui.\" (QS. Al-Baqarah: 137)"
+            },
+            {
+                id: 12,
+                name: "Bashar",
+                ar: "بَصَرٌ",
+                meaning: "Maha Melihat",
+                category: "maani",
+                categoryLabel: "Ma'ani",
+                explanation: "Allah melihat segala sesuatu yang ada di alam semesta, hingga semut hitam kecil di dalam kegelapan malam.",
+                mustahilAr: "عَمَى",
+                mustahilLatin: "'Ama",
+                mustahilMeaning: "Buta",
+                dalilAr: "إِنَّ اللَّهَ بَصِيرٌ بِالْعِبَادِ",
+                dalilTranslation: "\"Sesungguhnya Allah Maha Melihat akan hamba-hamba-Nya.\" (QS. Ali 'Imran: 15)"
+            },
+            {
+                id: 13,
+                name: "Kalam",
+                ar: "كَلَامٌ",
+                meaning: "Maha Berfirman",
+                category: "maani",
+                categoryLabel: "Ma'ani",
+                explanation: "Allah berfirman tanpa membutuhkan suara, huruf, atau alat pita suara sebagaimana firman-Nya dalam kitab-kitab suci.",
+                mustahilAr: "بَكَمٌ",
+                mustahilLatin: "Bakam",
+                mustahilMeaning: "Bisu",
+                dalilAr: "وَكَلَّمَ اللَّهُ مُوسَىٰ تَكْلِيمًا",
+                dalilTranslation: "\"Dan Allah telah berbicara kepada Musa secara langsung.\" (QS. An-Nisa': 164)"
+            },
+            {
+                id: 14,
+                name: "Qadiran",
+                ar: "قَادِرًا",
+                meaning: "Keadaan Allah Yang Maha Kuasa",
+                category: "maanawiyah",
+                categoryLabel: "Ma'nawiyah",
+                explanation: "Keadaan Allah yang senantiasa Maha Kuasa. Kelanjutan abadi dari Sifat Qudrat.",
+                mustahilAr: "عَاجِزًا",
+                mustahilLatin: "'Aajizan",
+                mustahilMeaning: "Keadaan Yang Lemah",
+                dalilAr: "إِنَّ اللَّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+                dalilTranslation: "\"Sesungguhnya Allah Maha Kuasa atas segala sesuatu.\" (QS. Al-Baqarah: 20)"
+            },
+            {
+                id: 15,
+                name: "Muridan",
+                ar: "مُرِيدًا",
+                meaning: "Keadaan Allah Yang Maha Berkehendak",
+                category: "maanawiyah",
+                categoryLabel: "Ma'nawiyah",
+                explanation: "Keadaan Allah yang selalu Maha Berkehendak. Kelanjutan abadi dari Sifat Iradat.",
+                mustahilAr: "مُكْرَهًا",
+                mustahilLatin: "Mukrahan",
+                mustahilMeaning: "Keadaan Yang Terpaksa",
+                dalilAr: "فَعَّالٌ لِّمَا يُرِيدُ",
+                dalilTranslation: "\"Maha Kuasa berbuat apa yang Dia kehendaki.\" (QS. Al-Buruj: 16)"
+            },
+            {
+                id: 16,
+                name: "'Aliman",
+                ar: "عَالِمًا",
+                meaning: "Keadaan Allah Yang Maha Mengetahui",
+                category: "maanawiyah",
+                categoryLabel: "Ma'nawiyah",
+                explanation: "Keadaan Allah yang senantiasa Maha Mengetahui segala hal secara detail. Kelanjutan abadi dari Sifat 'Ilmun.",
+                mustahilAr: "جَاهِلًا",
+                mustahilLatin: "Jaahilan",
+                mustahilMeaning: "Keadaan Yang Bodoh",
+                dalilAr: "وَاللَّهُ بِكُلِّ شَيْءٍ عَلِيمٌ",
+                dalilTranslation: "\"Dan Allah Maha Mengetahui segala sesuatu.\" (QS. An-Nisa': 176)"
+            },
+            {
+                id: 17,
+                name: "Hayyan",
+                ar: "حَيًّا",
+                meaning: "Keadaan Allah Yang Maha Hidup",
+                category: "maanawiyah",
+                categoryLabel: "Ma'nawiyah",
+                explanation: "Keadaan Allah yang senantiasa Maha Hidup dan tidak pernah mengalami kelemahan/kematian. Kelanjutan abadi dari Sifat Hayat.",
+                mustahilAr: "مَيِّتًا",
+                mustahilLatin: "Mayyitan",
+                mustahilMeaning: "Keadaan Yang Mati",
+                dalilAr: "وَتَوَكَّلْ عَلَى الْحَيِّ الَّذِي لَا يَمُوتُ",
+                dalilTranslation: "\"Dan bertawakkallah kepada Allah Yang Maha Hidup yang tidak mati...\" (QS. Al-Furqan: 58)"
+            },
+            {
+                id: 18,
+                name: "Sami'an",
+                ar: "سَمِيعًا",
+                meaning: "Keadaan Allah Yang Maha Mendengar",
+                category: "maanawiyah",
+                categoryLabel: "Ma'nawiyah",
+                explanation: "Keadaan Allah yang senantiasa Maha Mendengar segenap doa dan bisikan. Kelanjutan abadi dari Sifat Sama'.",
+                mustahilAr: "أَصَمَّ",
+                mustahilLatin: "Asyamma",
+                mustahilMeaning: "Keadaan Yang Tuli",
+                dalilAr: "إِنَّهُ هُوَ السَّمِيعُ الْبَصِيرُ",
+                dalilTranslation: "\"Sesungguhnya Dia adalah Yang Maha Mendengar lagi Maha Melihat.\" (QS. Al-Isra': 1)"
+            },
+            {
+                id: 19,
+                name: "Bashiran",
+                ar: "بَصِيرًا",
+                meaning: "Keadaan Allah Yang Maha Melihat",
+                category: "maanawiyah",
+                categoryLabel: "Ma'nawiyah",
+                explanation: "Keadaan Allah yang senantiasa Maha Melihat seluruh alam semesta. Kelanjutan abadi dari Sifat Bashar.",
+                mustahilAr: "أَعْمَى",
+                mustahilLatin: "A'maa",
+                mustahilMeaning: "Keadaan Yang Buta",
+                dalilAr: "وَاللَّهُ بَصِيرٌ بِمَا تَعْمَلُونَ",
+                dalilTranslation: "\"Dan Allah Maha Melihat apa yang kamu kerjakan.\" (QS. Al-Hujurat: 18)"
+            },
+            {
+                id: 20,
+                name: "Mutakalliman",
+                ar: "مُتَكَلِّمًا",
+                meaning: "Keadaan Allah Yang Maha Berfirman",
+                category: "maanawiyah",
+                categoryLabel: "Ma'nawiyah",
+                explanation: "Keadaan Allah yang senantiasa Maha Berfirman kepada para nabi dan manusia. Kelanjutan abadi dari Sifat Kalam.",
+                mustahilAr: "أَبْكَمَ",
+                mustahilLatin: "Abkama",
+                mustahilMeaning: "Keadaan Yang Bisu",
+                dalilAr: "وَكَلَّمَ اللَّهُ مُوسَىٰ تَكْلِيمًا",
+                dalilTranslation: "\"Dan Allah telah berbicara kepada Musa secara langsung.\" (QS. An-Nisa': 164)"
+            }
+        ];
+
+        let currentSifatIndex = 0;
+        let currentCategoryFilter = 'all';
+        let isAudioPlaying = false;
+        let isAutoPlay = false;
+        let autoPlayTimer = null;
+        let speechSynth = window.speechSynthesis;
+
+        // Audio synthesizer fallback if TTS is disabled
+        function playSynthesizedTone() {
+            try {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                if (!AudioCtx) return;
+                const ctx = new AudioCtx();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(440, ctx.currentTime); // A4 tone
+                osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.8);
+
+                gain.gain.setValueAtTime(0.3, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.8);
+
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+
+                osc.start();
+                osc.stop(ctx.currentTime + 0.8);
+            } catch (e) {
+                console.log("Audio synth error", e);
+            }
+        }
+
+        // Voice Reader Function
+        function playAudioCurrent() {
+            if ('speechSynthesis' in window) {
+                speechSynth.cancel();
+
+                const filtered = getFilteredData();
+                const currentData = filtered[currentSifatIndex];
+                if (!currentData) return;
+
+                // Speech text
+                const textToRead = `${currentData.name}. Artinya ${currentData.meaning}.`;
+
+                const utterance = new SpeechSynthesisUtterance(textToRead);
+                utterance.rate = 0.85;
+                utterance.lang = 'id-ID';
+
+                utterance.onstart = () => {
+                    isAudioPlaying = true;
+                    updateAudioUI(true);
+                };
+
+                utterance.onend = () => {
+                    isAudioPlaying = false;
+                    updateAudioUI(false);
+                    if (isAutoPlay) {
+                        autoPlayTimer = setTimeout(() => {
+                            navigateSifat(1);
+                        }, 1200);
+                    }
+                };
+
+                utterance.onerror = () => {
+                    isAudioPlaying = false;
+                    updateAudioUI(false);
+                    playSynthesizedTone();
+                };
+
+                speechSynth.speak(utterance);
+            } else {
+                playSynthesizedTone();
+            }
+        }
+
+        function updateAudioUI(playing) {
+            const btn = document.getElementById('btn-play-audio');
+            const icon = document.getElementById('play-icon');
+            const status = document.getElementById('audio-status-label');
+
+            if (playing) {
+                if (btn) btn.classList.add('pulse-wave');
+                if (icon) icon.className = "fa-solid fa-volume-high text-xl animate-bounce";
+                if (status) status.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span><span class="font-semibold text-emerald-600 dark:text-emerald-400">Sedang memutar suara lafal...</span>`;
+            } else {
+                if (btn) btn.classList.remove('pulse-wave');
+                if (icon) icon.className = "fa-solid fa-volume-high text-xl";
+                if (status) status.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500"></span><span>Klik ikon audio di atas untuk mendengar lafal</span>`;
+            }
+        }
+
+        function stopAudio() {
+            if ('speechSynthesis' in window) {
+                speechSynth.cancel();
+            }
+            if (autoPlayTimer) clearTimeout(autoPlayTimer);
+            isAudioPlaying = false;
+            updateAudioUI(false);
+        }
+
+        function toggleAutoPlay() {
+            isAutoPlay = !isAutoPlay;
+            const btn = document.getElementById('btn-autoplay');
+            if (isAutoPlay) {
+                btn.className = "px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-bold transition flex items-center shadow-sm";
+                btn.innerHTML = `<i class="fa-solid fa-circle-pause mr-1"></i> Putar Otomatis: ON`;
+                playAudioCurrent();
+            } else {
+                btn.className = "px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300 font-medium transition";
+                btn.innerHTML = `<i class="fa-solid fa-play mr-1"></i> Mode Putar Otomatis`;
+                stopAudio();
+            }
+        }
+
+        // Filter Logic
+        function getFilteredData() {
+            const query = document.getElementById('search-input')?.value.toLowerCase().trim() || '';
+            return sifatData.filter(item => {
+                const matchCategory = (currentCategoryFilter === 'all' || item.category === currentCategoryFilter);
+                const matchSearch = item.name.toLowerCase().includes(query) || item.meaning.toLowerCase().includes(query) || item.ar.includes(query);
+                return matchCategory && matchSearch;
+            });
+        }
+
+        function filterCategory(cat) {
+            currentCategoryFilter = cat;
+            currentSifatIndex = 0;
+
+            document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+                btn.className = "cat-filter-btn p-2.5 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-semibold text-xs text-center transition hover:border-emerald-500";
+            });
+            const activeBtn = document.getElementById(`btn-cat-${cat}`);
+            if (activeBtn) {
+                activeBtn.className = "cat-filter-btn active p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 font-bold text-xs text-center transition";
+            }
+
+            stopAudio();
+            renderSifatCardUI();
+        }
+
+        function handleSearch(val) {
+            currentSifatIndex = 0;
+            stopAudio();
+            renderSifatCardUI();
+        }
+
+        function renderSifatCardUI() {
+            const filtered = getFilteredData();
+
+            if (filtered.length === 0) {
+                document.getElementById('active-sifat-title').innerText = "Sifat Tidak Ditemukan";
+                document.getElementById('active-sifat-category-badge').innerText = "0 Hasil";
+                document.getElementById('detail-latin-name').innerText = "Tidak ada hasil";
+                document.getElementById('detail-meaning').innerText = "Coba kata kunci pencarian yang lain.";
+                document.getElementById('detail-explanation').innerText = "-";
+                document.getElementById('sifat-buttons-list').innerHTML = `<p class="text-xs text-slate-400 p-2 text-center">Data tidak ditemukan.</p>`;
+                return;
+            }
+
+            if (currentSifatIndex >= filtered.length) currentSifatIndex = filtered.length - 1;
+            if (currentSifatIndex < 0) currentSifatIndex = 0;
+
+            const item = filtered[currentSifatIndex];
+
+            // Progress Header
+            document.getElementById('active-sifat-title').innerText = `${item.id}. ${item.name} (${item.ar})`;
+            document.getElementById('active-sifat-category-badge').innerText = item.categoryLabel;
+            document.getElementById('active-sifat-desc').innerText = `Sifat Wajib Ke-${item.id} bagi Allah SWT, artinya **${item.meaning}**.`;
+
+            document.getElementById('sifat-counter-text').innerText = `Sifat ${currentSifatIndex + 1} dari ${filtered.length}`;
+            const pct = ((currentSifatIndex + 1) / filtered.length) * 100;
+            document.getElementById('sifat-progress-bar').style.width = `${pct}%`;
+
+            // Detail Card
+            document.getElementById('detail-arabic-title').innerText = item.ar;
+            document.getElementById('detail-latin-name').innerText = `${item.id}. ${item.name}`;
+            document.getElementById('detail-category-tag').innerText = item.categoryLabel;
+            document.getElementById('detail-meaning').innerText = `Artinya: ${item.meaning}`;
+            document.getElementById('detail-explanation').innerText = item.explanation;
+
+            document.getElementById('detail-mustahil-text').innerText = `${item.mustahilLatin} (${item.mustahilAr}) — Artinya: ${item.mustahilMeaning}`;
+            document.getElementById('detail-dalil-ar').innerText = item.dalilAr;
+            document.getElementById('detail-dalil-translation').innerText = item.dalilTranslation;
+
+            // Nav buttons disabled state
+            document.getElementById('btn-prev-sifat').disabled = (currentSifatIndex === 0);
+            const nextBtn = document.getElementById('btn-next-sifat');
+            if (currentSifatIndex === filtered.length - 1) {
+                nextBtn.innerHTML = `<span>Selesai Belajar</span> <i class="fa-solid fa-check"></i>`;
+            } else {
+                nextBtn.innerHTML = `<span>Selanjutnya</span> <i class="fa-solid fa-arrow-right"></i>`;
+            }
+
+            // Render Jump List Buttons
+            const listContainer = document.getElementById('sifat-buttons-list');
+            listContainer.innerHTML = '';
+            filtered.forEach((data, idx) => {
+                const isActive = (idx === currentSifatIndex);
+                const btn = document.createElement('button');
+                btn.onclick = () => jumpToSifat(idx);
+                btn.className = `w-full text-left px-3 py-2 rounded-xl text-xs flex items-center justify-between transition ${
+                    isActive 
+                    ? 'bg-emerald-600 text-white font-semibold shadow-sm' 
+                    : 'bg-slate-50 dark:bg-slate-700/50 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300'
+                }`;
+                btn.innerHTML = `
+                    <div class="flex items-center space-x-2 truncate">
+                        <span class="w-5 h-5 rounded-full flex items-center justify-center text-[10px] ${isActive ? 'bg-white/20 text-white' : 'bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-200'}">${data.id}</span>
+                        <span class="truncate">${data.name}</span>
+                    </div>
+                    <span class="text-[11px] opacity-80 arabic-text">${data.ar}</span>
+                `;
+                listContainer.appendChild(btn);
+            });
+        }
+
+        function navigateSifat(dir) {
+            stopAudio();
+            const filtered = getFilteredData();
+            const nextIndex = currentSifatIndex + dir;
+
+            if (nextIndex >= 0 && nextIndex < filtered.length) {
+                currentSifatIndex = nextIndex;
+                renderSifatCardUI();
+                if (isAutoPlay) {
+                    playAudioCurrent();
+                }
+            }
+        }
+
+        function jumpToSifat(idx) {
+            stopAudio();
+            currentSifatIndex = idx;
+            renderSifatCardUI();
+            if (isAutoPlay) {
+                playAudioCurrent();
+            }
+        }
+
+        // Tab Switching
+        function switchMainTab(tabName) {
+            stopAudio();
+            ['learn', 'category', 'quiz', 'table'].forEach(t => {
+                const el = document.getElementById(`tab-${t}`);
+                const navBtn = document.getElementById(`nav-${t}`);
+                const mobileBtn = document.getElementById(`mobile-nav-${t}`);
+
+                if (t === tabName) {
+                    el.classList.remove('hidden');
+                    if (navBtn) navBtn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 shadow-sm transition";
+                    if (mobileBtn) mobileBtn.className = "flex-1 py-1.5 text-center font-semibold text-emerald-600 dark:text-emerald-400 border-b-2 border-emerald-500";
+                } else {
+                    el.classList.add('hidden');
+                    if (navBtn) navBtn.className = "px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition";
+                    if (mobileBtn) mobileBtn.className = "flex-1 py-1.5 text-center text-slate-500 dark:text-slate-400";
+                }
+            });
+
+            if (tabName === 'quiz') initQuiz();
+            if (tabName === 'table') renderSummaryTable();
+        }
+
+        function renderSummaryTable() {
+            const tbody = document.getElementById('table-body-rows');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+
+            sifatData.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50 dark:hover:bg-slate-800/50 transition";
+                tr.innerHTML = `
+                    <td class="p-3 font-semibold text-emerald-600 dark:text-emerald-400">${item.id}</td>
+                    <td class="p-3 font-bold">${item.name} <span class="arabic-text text-sm font-normal text-slate-500">(${item.ar})</span></td>
+                    <td class="p-3 font-medium text-emerald-700 dark:text-emerald-300">${item.meaning}</td>
+                    <td class="p-3 font-semibold text-rose-600 dark:text-rose-400">${item.mustahilLatin} <span class="arabic-text text-sm font-normal text-slate-400">(${item.mustahilAr})</span></td>
+                    <td class="p-3 italic text-slate-500">${item.mustahilMeaning}</td>
+                    <td class="p-3"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">${item.categoryLabel}</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        const quizQuestions = [
+            {
+                q: "Sifat Wajib 'Qidam' artinya adalah...",
+                options: ["Maha Ada", "Maha Awal / Terdahulu", "Maha Kekal", "Maha Berbeda dengan Makhluk"],
+                correct: 1
+            },
+            {
+                q: "Kebalikan (Sifat Mustahil) dari sifat 'Wujud' adalah...",
+                options: ["'Adam (Tiada)", "Huduts (Baru)", "Fana' (Binasa)", "Jahlun (Bodoh)"],
+                correct: 0
+            },
+            {
+                q: "Sifat 'Qudrat' dan 'Iradat' termasuk dalam kelompok Sifat...",
+                options: ["Nafsiyah", "Salbiyah", "Ma'ani", "Ma'nawiyah"],
+                correct: 2
+            },
+            {
+                q: "Berapa jumlah Sifat Wajib bagi Allah SWT yang wajib diketahui?",
+                options: ["10 Sifat", "20 Sifat", "50 Sifat", "99 Sifat"],
+                correct: 1
+            },
+            {
+                q: "Apa arti dari Sifat Wajib 'Mukhalafatu lil-Hawaditsi'?",
+                options: ["Berdiri Sendiri", "Maha Berkehendak", "Berbeda dengan Makhluk", "Maha Mengetahui"],
+                correct: 2
+            }
+        ];
+
+        let quizIndex = 0;
+        let quizScore = 0;
+
+        function initQuiz() {
+            quizIndex = 0;
+            quizScore = 0;
+            document.getElementById('quiz-card').classList.remove('hidden');
+            document.getElementById('quiz-score-board').classList.add('hidden');
+            renderQuizQuestion();
+        }
+
+        function renderQuizQuestion() {
+            const qData = quizQuestions[quizIndex];
+            document.getElementById('quiz-question-num').innerText = `Pertanyaan ${quizIndex + 1} dari ${quizQuestions.length}`;
+            document.getElementById('quiz-question-title').innerText = qData.q;
+
+            const optsContainer = document.getElementById('quiz-options');
+            optsContainer.innerHTML = '';
+
+            qData.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-emerald-500 dark:hover:border-emerald-500 text-xs font-semibold text-slate-700 dark:text-slate-200 text-left transition";
+                btn.innerText = `${String.fromCharCode(65 + idx)}. ${opt}`;
+                btn.onclick = () => handleQuizAnswer(idx);
+                optsContainer.appendChild(btn);
+            });
+        }
+
+        function handleQuizAnswer(selectedIdx) {
+            if (selectedIdx === quizQuestions[quizIndex].correct) {
+                quizScore += 20;
+            }
+
+            quizIndex++;
+            if (quizIndex < quizQuestions.length) {
+                renderQuizQuestion();
+            } else {
+                document.getElementById('quiz-card').classList.add('hidden');
+                document.getElementById('quiz-score-board').classList.remove('hidden');
+                document.getElementById('quiz-score').innerText = quizScore;
+            }
+        }
+
+        function resetQuiz() {
+            initQuiz();
+        }
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        // Initialize application on load
+        window.onload = function() {
+            renderSifatCardUI();
+        };
+    </script>
+</body>
+</html>
